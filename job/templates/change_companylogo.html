@@ -1,0 +1,137 @@
+{% load static %}
+{% block body %}
+{% include 'recruiter_navigation.html' %}
+
+
+<!--<script>-->
+<!--    function checkpass()-->
+<!--    {-->
+<!--    if(document.signup.pwd.value!=document.signup.cpwd.value)-->
+<!--    {-->
+<!--    alert('Password and Repeat Password field does not match.');-->
+<!--    document.signup.cpwd.focus();-->
+<!--    return false;-->
+<!--    }-->
+<!--    return true;-->
+<!--    }-->
+<!--</script>-->
+
+
+<hr>
+<br>
+<br>
+<br>
+<!--<hr>-->
+<head>
+    <title>CHANGE COMPANY LOGO</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <style>
+       body{
+          margin:0;
+          padding:0;
+background:url("https://th.bing.com/th/id/OIP.sRSip1LSpp8XJJASN37DcQHaEK?w=328&h=184&c=7&r=0&o=5&dpr=1.25&pid=1.7");
+          background-size: cover;
+          font-family: sans-serif;
+          background-color:hsl(183, 3%, 69%);
+           }
+<!--      .log{  width:1366px;-->
+<!--          height:696px;-->
+<!--          }-->
+      .loginbox{  width: 550px;
+          height: 1150px;
+          background: #000;
+          color:hsl(94, 15%, 75%);
+<!--           #fff;-->
+          top:20%;
+          left:36%;
+          position:absolute;
+          transform: translate{-50%,-50%}
+          box-sizing: border-box;
+          padding: 70px 30px;
+          opacity:.7;
+               }
+
+      .loginbox p{
+        margin:0;
+          padding: 50px;
+          font-weight:bold;
+                 }
+      .loginbox input{width: 100%;
+          margin-bottom:20px;
+                     }
+<!--
+       </style>
+</head>
+<body>
+
+<div class="loginbox">
+
+    <h1>CHANGE COMPANY LOGO</h1>
+
+    <form class ="container mt-5" name="signup" onsubmit="return checkpass();" method="post"  enctype="multipart/form-data" padding="20px">
+        <!--<div class="loginbox">-->
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label>Job Title&ensp;&ensp;</label>
+                <input type="text" class="form-control" readonly name="jobtitle" value="{{job.title}}" required>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label>&ensp;Company Logo</label><br><br>
+                <img src="{{job.image.url}}" width="120" height="90"><br>
+            </div>
+        </div>
+        <hr>
+
+        <div class="form-row">
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label>&ensp;Company Logo</label>
+                <input type="file" class="form-control" name="logo"  required><a href="">Change Company Logo</a>
+            </div>
+        </div>
+
+        <br>
+
+
+        <hr>
+        <br>
+        <br>
+        <input type="submit" value="Submit" class="btn btn-primary" style="width:250px,padding:40px">
+
+    </form>
+</div>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/ajax-utils.js"></script>
+<script src="js/script.js"></script>
+</body>
+
+{% if error == "no" %}
+<script>
+    alert("Company logo updated Successfully");
+    window.location = ('{% url 'change_companylogo' job.id %}')
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert("Something went wrong.Try again");
+</script>
+{% endif %}
+
+
+
+{% endblock %}

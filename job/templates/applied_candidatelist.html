@@ -1,0 +1,62 @@
+{% load static %}
+{% block body %}
+{% include 'recruiter_navigation.html' %}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<!--<style>-->
+<!--&lt;!&ndash;    tr{text-align:center}&ndash;&gt;-->
+<!--</style>-->
+<hr>
+<hr>
+<hr>
+<hr>
+<marquee style ="background-color : #F0F8FF;font-size:35px;color:grey">APPLIED CANDIDATE LIST</marquee>
+<hr>
+<style>
+     body{
+          margin:0;
+          padding:0;
+background:url("https://kellyvanek.com/wp-content/uploads/2019/12/KCV-Midpic-1024x575.jpg");
+          background-size: cover;
+          font-family: sans-serif;
+          background-color:hsl(183, 3%, 69%);
+           }
+</style>
+<!--<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">-->
+<!--<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css"-->
+<div class="container">
+    <table class="table table-hover table-striped container" style="width:100%;padding:20px" id="example">
+        <thead style ="background-color : #F3F3DB;color:grey;font-size:15px">
+        <tr >
+            <th>SR.NO </th>
+            <th>Full Name </th>
+            <th>Email-ID </th>
+            <th>Contact No </th>
+            <th>Job Title </th>
+            <th>Company </th>
+            <th>Apply Date </th>
+
+        </tr>
+        </thead>
+        <tbody style="background-color:#F0F8FF">
+        {% for i in data %}
+        {% if request.user.id == i.job.recruiter.user.id %}
+        <tr >
+            <td style="padding-left:20px">{{forloop.counter}}</td>
+            <td style="padding-left:20px">{{i.student.user.first_name}} {{i.student.user.last_name}}</td>
+            <td style="padding-left:20px">{{i.student.user.username}}</td>
+            <td style="padding-left:20px">{{i.student.mobile}}</td>
+            <td style="padding-left:20px">{{i.job.title}}</td>
+            <td style="padding-left:20px">{{i.job.recruiter.company}}</td>
+            <td style="padding-left:20px">{{i.applydate}}</td>
+
+
+        </tr>
+        {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

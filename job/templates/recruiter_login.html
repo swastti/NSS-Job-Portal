@@ -1,0 +1,101 @@
+{% load static %}
+{% block body %}
+{% include 'navigation.html' %}
+<hr>
+<hr>
+<hr>
+
+<head>
+    <title> LOGIN Form</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+<!--    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>-->
+
+
+
+    <style>
+       body{
+          margin:0;
+          padding:0;
+background:url("https://s3.envato.com/files/882f5d63-9cbe-45d4-98b5-6f1eb8a5b9c2/inline_image_preview.jpg");
+          background-size: cover;
+          font-family: sans-serif;
+          background-color:hsl(183, 3%, 69%);
+           }
+<!--      .log{  width:1366px;-->
+<!--          height:696px;-->
+<!--          }-->
+      .loginbox{  width: 450px;
+          height: 450px;
+          background: #000;
+
+          color:hsl(94, 15%, 75%);
+<!--           #fff;-->
+          top:20%;
+          left:36%;
+          position:absolute;
+          transform: translate{-50%,-50%}
+          box-sizing: border-box;
+          padding: 70px 30px;
+          opacity:.7;
+               }
+
+      .loginbox p{  margin:0;
+          padding: 0;
+          font-weight:bold;
+                 }
+      .loginbox input{width: 100%;
+          margin-bottom:20px;
+                     }
+<!--
+       </style>
+</head>
+<body>
+
+<div class="loginbox">
+
+    <h1>Recruiter Login</h1>
+
+    <form class ="container mt-5" method = "post">
+        {% csrf_token %}
+        <p> Email ID</p>
+        <input type="text" name="uname" placeholder="Enter Email ID">
+        <p> Password</p>
+        <input type="password" name="pwd" placeholder="Enter Password"><br>
+        <input type="submit" name="" value="Login">
+<!--                <a href="#">Lost your password?</a><br>-->
+        <a href="{% url 'recruiter_signup' %}">Don't have an account? Sign up here</a>
+
+    </form>
+</div>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/ajax-utils.js"></script>
+<script src="js/script.js"></script>
+</body>
+
+
+{% if error == "no" %}
+<script>
+    alert("LogIn Successful");
+    window.location = ('{% url 'recruiter_home' %}')
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert("Invalid Login Credentials...Something went wrong.Try again");
+</script>
+{% endif %}
+
+{% if error == "not" %}
+<script>
+    alert("Your login Status is pending.Try again");
+</script>
+{% endif %}
+
+
+{% endblock %}

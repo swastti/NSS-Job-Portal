@@ -1,0 +1,54 @@
+{% load static %}
+{% block body %}
+{% include 'recruiter_navigation.html' %}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<!--<style>-->
+<!--&lt;!&ndash;    tr{text-align:center}&ndash;&gt;-->
+<!--</style>-->
+<hr>
+<hr>
+<hr>
+<hr>
+<marquee style ="background-color : #F0F8FF;font-size:35px;color:grey">JOBS POSTED</marquee>
+<hr>
+<style>
+     body{
+          margin:0;
+          padding:0;
+background:url("https://kellyvanek.com/wp-content/uploads/2019/12/KCV-Midpic-1024x575.jpg");
+          background-size: cover;
+          font-family: sans-serif;
+          background-color:hsl(183, 3%, 69%);
+           }
+</style>
+<!--<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">-->
+<!--<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css"-->
+<div class="container">
+    <table class="table table-hover table-striped container" style="width:100%;padding:20px" id="example">
+        <thead style ="background-color : #F3F3DB;color:grey;font-size:15px">
+        <tr >
+            <th>SR.NO </th>
+            <th>Job Title </th>
+            <th>Creation date </th>
+            <th>Action </th>
+        </tr>
+        </thead>
+        <tbody style="background-color:#F0F8FF">
+        {% for i in job %}
+        <tr >
+            <td style="padding-left:20px">{{forloop.counter}}</td>
+            <td style="padding-left:20px">{{i.title}}</td>
+            <td style="padding-left:20px">{{i.creationdate}}</td>
+
+            <td><a href="{% url 'edit_jobdetail' i.id %}" class="btn btn-success btn-sm"> Edit </a>
+                 <a href="{% url 'delete_recruiter' i.id %}" class="btn btn-success btn-sm"> Delete </a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

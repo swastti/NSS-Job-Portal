@@ -1,0 +1,62 @@
+{% load static %}
+{% block body %}
+{% include 'navigation.html' %}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<!--<style>-->
+<!--&lt;!&ndash;    tr{text-align:center}&ndash;&gt;-->
+<!--</style>-->
+<hr>
+<hr>
+<hr>
+<hr>
+<marquee style ="background-color : #F0F8FF;font-size:35px;color:grey">LATEST JOBS</marquee>
+<hr>
+<style>
+     body{
+          margin:0;
+          padding:0;
+background:url("https://th.bing.com/th/id/OIP.bjKHhUKkprhuZAIE2VH7_wHaFj?w=245&h=184&c=7&r=0&o=5&dpr=1.25&pid=1.7");
+          background-size: cover;
+          font-family: sans-serif;
+          background-color:hsl(183, 3%, 69%);
+           }
+</style>
+<!--<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">-->
+<!--<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css"-->
+<div class="container">
+    <table class="table table-hover table-striped container" style="width:100%;padding:20px" id="example">
+        <thead style ="background-color : #ADD8E6;color:grey;font-size:15px">
+        <tr >
+            <th>SR.NO </th>
+            <th>Company Name </th>
+            <th>Job Title </th>
+            <th>Location </th>
+            <th>Start Date </th>
+            <th>End Date </th>
+            <th>Creation date </th>
+            <th>Action </th>
+        </tr>
+        </thead>
+        <tbody style="background-color:#F0F8FF">
+        {% for i in job %}
+        <tr >
+            <td style="padding-left:20px">{{forloop.counter}}</td>
+            <td style="padding-left:20px">{{i.recruiter.company}}</td>
+            <td style="padding-left:20px">{{i.title}}</td>
+            <td style="padding-left:20px">{{i.location}}</td>
+            <td style="padding-left:20px">{{i.start_date}}</td>
+            <td style="padding-left:20px">{{i.end_date}}</td>
+            <td style="padding-left:20px">{{i.creationdate}}</td>
+
+            <td><a href="{% url 'user_login'  %}" class="btn btn-success btn-sm"> APPLY </a>
+
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,155 @@
+<html>
+<head>
+    {% load static %}
+    <title>JOBs4u</title><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+<!--  padding:20px;-->
+}
+
+/* Full height image header */
+.bgimg-1 {
+height:100%;
+width:100%;
+  background-position: center;
+  background-size: cover;
+  background-image: url(% static "color1.png" %);
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+</style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://ajjax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href=https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
+
+
+
+
+</head>
+<body>
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-card" id="myNavbar">
+            <a href="#home" class="w3-bar-item w3-button w3-wide">JOBs4u</a>
+            <!-- Right-sided navbar links -->
+            <div class="w3-right w3-hide-small">
+<!--                <a href="{% url 'admin_home' %}" style="margin-left:10px" class="w3-bar-item w3-button"><i class="fa fa-home"></i>HOME</a>                <a href="{% url 'footer' %}" class="w3-bar-item w3-button">ABOUT</a>-->
+<!--                <a  href="{% url 'recruiter_pending' %}">Pending</a>-->
+<!--                <a  href="{% url 'recruiter_accepted' %}">Accepted</a>-->
+<!--                <a  href="{% url 'recruiter_rejected' %}">Rejected</a>-->
+<!--                <a  href="{% url 'recruiters_all' %}">All Recruiters</a>-->
+<!--                <a href="{% url 'view_users' %}" class="w3-bar-item w3-button"><i class="fa fa-eye"></i>VIEW USERS</a>-->
+<!--                <a href="{% url 'change_passwordadmin' %}" class="w3-bar-item w3-button"><i class="fa fa-user-circle mr-1"></i> CHANGE PASSWORD</a>-->
+<!--                <a href="{% url 'user_login' %}" class="w3-bar-item w3-button"><i class="fa fa-sign-out"></i> LOG OUT</a>-->
+<!--                <a  class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> {{request.user.first_name}} {{request.user.last_name}}</a>-->
+
+
+                <a href="{% url 'admin_home' %}" class="w3-bar-item w3-button"><i class="fa fa-home"></i>HOME</a>
+                <a href="{% url 'recruiter_pending' %}" class="w3-bar-item w3-button">PENDING REQ</a>
+                <a href="{% url 'recruiter_accepted' %}" class="w3-bar-item w3-button">ACCEPTED REQ</a>
+                <a href="{% url 'recruiter_rejected' %}" class="w3-bar-item w3-button">REJECTED REQ</a>
+                <a href="{% url 'recruiters_all' %}" class="w3-bar-item w3-button">ALL REQ</a>
+                <a href="{% url 'view_users' %}" class="w3-bar-item w3-button"><i class="fa fa-eye"></i>VIEW USERS</a>
+                <a href="{% url 'change_passwordadmin' %}" class="w3-bar-item w3-button"><i class="fa fa-user-circle mr-1"></i> CHANGE PASSWORD</a>
+                <a href="{% url 'user_login' %}" class="w3-bar-item w3-button"><i class="fa fa-sign-out"></i> LOG OUT</a>
+                <a  class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> {{request.user.first_name}} {{request.user.last_name}}</a>
+
+
+
+            </div>
+            <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </div>
+
+<!--    <div class="w3-bar w3-white w3-card" id="myNavbar">-->
+<!--        <a href="#home" class="w3-bar-item w3-button w3-wide">JOBs4u</a>-->
+<!--        &lt;!&ndash; Right-sided navbar links &ndash;&gt;-->
+<!--        <div class="w3-right w3-hide-small">4-->
+<!--&lt;!&ndash;            <li class="nav-item">&ndash;&gt;-->
+<!--            <a href="{% url 'admin_home' %}" style="margin-left:10px" class="w3-bar-item w3-button"><i class="fa fa-home"></i>HOME</a>-->
+<!--&lt;!&ndash;            </li>&ndash;&gt;-->
+<!--            <li class="nav-item dropdown">-->
+<!--            <a class="nav-link dropdown-toggle" href="{% url 'admin_home' %} " style="margin-left:20px" class="w3-bar-item w3-button" data-toggle="dropdown"><i class="fa fa-users mr-1"></i>RECRUITER REQUEST</a>-->
+<!--            <div class="dropdown-menu">-->
+<!--                <a class="dropdown-item" href="{% url 'recruiter_pending' %}">Pending</a>-->
+<!--                <a class="dropdown-item" href="{% url 'recruiter_accepted' %}">Accepted</a>-->
+<!--                <a class="dropdown-item" href="{% url 'recruiter_rejected' %}">Rejected</a>-->
+<!--                <a class="dropdown-item" href="{% url 'recruiters_all' %}">All Recruiters</a>-->
+<!--                <a  class="w3-bar-item w3-button"><i class="fa fa-user-o"></i> {{request.user.first_name}} {{request.user.last_name}}</a>-->
+
+<!--            </div>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--            <a href="{% url 'admin_home' %}" class="w3-bar-item w3-button"><i class="fa fa-eye"></i>VIEW RECRUITERS</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--            <a href="{% url 'view_users' %}" class="w3-bar-item w3-button"><i class="fa fa-eye"></i>VIEW USERS</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--                <a href="{% url 'change_passwordadmin' %}" class="w3-bar-item w3-button"><i class="fa fa-user-circle mr-1"></i> CHANGE PASSWORD</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--            <a href="{% url 'user_login' %}" class="w3-bar-item w3-button"><i class="fa fa-sign-out"></i> LOG OUT</a>-->
+<!--            </li>-->
+<!--        </div>-->
+        <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+</div>
+<script>
+        $(document).ready(function() {
+        $('#example').DataTable( {
+            dom: 'Bfrtip',
+            buttons: [
+                'copyHtml5',
+                'excelHtml5',
+                'csvHtml5',
+                'pdfHtml5'
+            ]
+        } );
+    } );
+    </script>
+<!--<script src="https://code.jquery.com/jquery-3.5.1.js"></script>-->
+<!--<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>-->
+<!--<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>-->
+<!--<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>-->
+<!--<script src="https://ajjax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">-->
+<!--<link rel="stylesheet" href=https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css"-->
+
+</body>
+</html>

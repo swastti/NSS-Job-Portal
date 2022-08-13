@@ -1,0 +1,66 @@
+{% load static %}
+
+{% block body %}
+{% include 'navigation.html' %}
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<style>
+    .bg{
+    background-position: center;
+    background-repeat:repeat;
+<!--height:100%;-->
+<!--&lt;!&ndash;width:100%;&ndash;&gt;-->
+<!--  background-position: center;-->
+<!--  background-size: cover;-->
+<!--  background-image: url(% static "https://assets.entrepreneur.com/content/3x2/2000/20160923184026-GettyImages-480743480.jpeg" %);-->
+}
+img {
+padding-top:0px;
+padding-left:25px;
+padding-right:25px;
+  width: 100%;
+  height:auto;
+
+.mydiv:hover{
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.3);
+    transform:translateY(-20px)
+    }
+
+}
+#bg{
+background-color:grey;
+}
+</style>
+<!--<img src="https://th.bing.com/th/id/OIP.OwhkibIcaz5ogBJCDOS6mgHaE2?w=245&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7" style="height:100%,width:100%">-->
+<!--https://thumbs.dreamstime.com/b/garden-detail-aesthetic-design-aerial-view-43957562.jpg" style="height:100%,width:100%">-->
+<!--<img src="https://th.bing.com/th/id/OIP.L0fHj-mM9am5u2UlL18McQHaEK?w=322&h=181&c=7&r=0&o=5&dpr=1.25&pid=1.7" style="width:100%">-->
+<!--<img src ="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/conference-room-zoom-background-templates-design-2aa32492074fc3ea8516ba00498826d5_screen.jpg?ts=1589099151" style="width:100% ">-->
+<!--<img src="https://www.minder-zitten.nl/wp-content/uploads/2017/05/tips-om-minder-te-zitten-op-het-werk-1.jpg" class="img-fluid" style="width:100%">-->
+<!--<div class="w3-container w3-light-grey" style="padding:88px 16px" id="contact">-->
+<img src="https://assets.entrepreneur.com/content/3x2/2000/20160923184026-GettyImages-480743480.jpeg" >
+<!--</div>-->
+<div class="w3-display-left w3-text-white">
+<!--     style="padding:600px"-->
+    <span class="w3-jumbo w3-hide-small mydiv" style="padding:630px">JOBs4u</span><br>
+<!--    <img src="https://thumbs.dreamstime.com/b/garden-detail-aesthetic-design-aerial-view-43957562.jpg" style="height:100%,width:100%">-->
+    <!--        <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start something that matters</span><br>-->
+    <span class="w3-large" style="padding: 640px">We Value Your Time.</span>
+
+    <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off" style="padding:640px">Learn more</a></p>
+</div>
+
+
+<div class="w3-display-bottomleft w3-text-white w3-large" style="padding:24px 48px">
+    <i class="fa fa-facebook-official w3-hover-opacity mydiv"></i>
+    <i class="fa fa-instagram w3-hover-opacity mydiv"></i>
+    <i class="fa fa-snapchat w3-hover-opacity mydiv"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity mydiv"></i>
+    <i class="fa fa-twitter w3-hover-opacity mydiv"></i>
+    <i class="fa fa-linkedin w3-hover-opacity mydiv"></i>
+</div>
+
+
+{% include 'footer.html' %}
+{% include 'contact.html' %}
+
+{% endblock %}

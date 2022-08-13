@@ -1,0 +1,71 @@
+{% load static %}
+{% block body %}
+{% include 'user_navigation.html' %}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+</style>
+<hr>
+<hr>
+<hr>
+<hr>
+<marquee style ="background-color : #F0F8FF;font-size:35px;color:grey">APPLY FOR JOB</marquee>
+<hr>
+<style>
+     body{
+          margin:0;
+          padding:0;
+background:url("https://www.employmenthelp.org/wp-content/uploads/Seccond-Career-Header-Background.png" );
+          background-size: cover;
+          font-family: sans-serif;
+          background-color:hsl(183, 3%, 69%);
+           }
+
+
+</style>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+<!--<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css"-->
+<div class="container shadow-lg py-2">
+<!--   <form >-->
+<!--           method="post" enctype="multipart/form-data">-->
+<!--       {% csrf_token %}-->
+       <div class="form-row">
+           <label>Are You Sure You Want to Apply for this Job??</label>
+
+       </div>
+       <input type="submit" value=" YES " class="btn btn-danger mt-3">
+<!--   </form>-->
+
+</div>
+
+{% if error == "done" %}
+<script>
+        alert("Application submitted successfully.");
+        window.location = ('{% url 'user_latestjobs' %}')
+    </script>
+{% endif %}
+
+{% if error == "close" %}
+    <script>
+        alert("Application Line are closed,last date is over.");
+        window.location = ('{% url 'user_latestjobs' %}')
+    </script>
+{% endif %}
+
+{% if error == "notopen" %}
+    <script>
+        alert("Application Line is not open.");
+        window.location = ('{% url 'user_latestjobs' %}')
+    </script>
+{% endif %}
+
+
+
+
+
+{% endblock %}

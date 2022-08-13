@@ -1,0 +1,184 @@
+{% load static %}
+{% block body %}
+{% include 'navigation.html' %}
+<style>
+    .container {
+  position: relative;
+  width: 50%;
+}
+
+    .mydiv:hover{
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.3);
+    transform:translateY(-20px)
+    }
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+</style>
+<!-- About Section -->
+<div class="w3-container" style="padding:128px 16px" id="about">
+    <h3 class="w3-center">ABOUT </h3>
+    <p class="w3-center w3-large">Key features of our company</p>
+    <div class="w3-row-padding w3-center" style="margin-top:64px">
+        <div class="w3-quarter mydiv">
+            <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center "></i>
+            <p class="w3-large ">Responsive</p>
+            <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+        </div>
+        <div class="w3-quarter mydiv">
+            <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
+            <p class="w3-large">Passion</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+        </div>
+        <div class="w3-quarter mydiv">
+            <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+            <p class="w3-large">Design</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+        </div>
+        <div class="w3-quarter mydiv">
+            <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
+            <p class="w3-large">Support</p>
+            <p>Our team is always present to help you in any way.</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Team Section -->
+<!--<div class="w3-container" style="padding:128px 16px" id="team">-->
+<!--    <h3 class="w3-center">THE TEAM </h3>-->
+<!--    <p class="w3-center w3-large">The ones who runs this</p>-->
+<!--    <div class="w3-row-padding w3-grayscale" style="margin-top:64px">-->
+<!--        <div class="w3-col l3 m6 w3-margin-bottom">-->
+<!--&lt;!&ndash;            <div class="w3-card">&ndash;&gt;-->
+<!--&lt;!&ndash;                <img src="https://th.bing.com/th/id/OIP.4qQo9ebq5kAlYiGMSoL5RgHaHa?w=189&h=189&c=7&r=0&o=5&dpr=1.25&pid=1.7" alt="Royal" style="width:100%">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="w3-container">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <h3>Royal Dsouza</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p class="w3-opacity">NSS</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--            <div class="container">-->
+<!--                <img src="https://th.bing.com/th/id/OIP.4qQo9ebq5kAlYiGMSoL5RgHaHa?w=189&h=189&c=7&r=0&o=5&dpr=1.25&pid=1.7" alt="Avatar" class="image" style="width:100%">-->
+<!--                <div class="middle">-->
+<!--                    <div class="text">John Doe</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="w3-col l3 m6 w3-margin-bottom">-->
+<!--&lt;!&ndash;            <div class="w3-card">&ndash;&gt;-->
+<!--&lt;!&ndash;                <img src="https://th.bing.com/th/id/OIP.4qQo9ebq5kAlYiGMSoL5RgHaHa?w=189&h=189&c=7&r=0&o=5&dpr=1.25&pid=1.7" alt="Shiv" style="width:100%">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="w3-container">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <h3>Shiv Negi</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p class="w3-opacity">Director</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--            <div class="container">-->
+<!--                <img src="https://th.bing.com/th/id/OIP.4qQo9ebq5kAlYiGMSoL5RgHaHa?w=189&h=189&c=7&r=0&o=5&dpr=1.25&pid=1.7" alt="Avatar" class="image" style="width:100%">-->
+<!--                <div class="middle">-->
+<!--                    <div class="text">John Doe</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="w3-col l3 m6 w3-margin-bottom">-->
+<!--&lt;!&ndash;            <div class="w3-card">&ndash;&gt;-->
+<!--&lt;!&ndash;                <img src="https://th.bing.com/th/id/OIP.4qQo9ebq5kAlYiGMSoL5RgHaHa?w=189&h=189&c=7&r=0&o=5&dpr=1.25&pid=1.7" alt="Tayyabali" style="width:100%">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="w3-container">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <h3>Tayyabli Sayyad</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p class="w3-opacity">Unix</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--            <div class="container">-->
+<!--                <img src="https://th.bing.com/th/id/OIP.4qQo9ebq5kAlYiGMSoL5RgHaHa?w=189&h=189&c=7&r=0&o=5&dpr=1.25&pid=1.7" alt="Avatar" class="image" style="width:100%">-->
+<!--                <div class="middle">-->
+<!--                    <div class="text">John Doe</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="w3-col l3 m6 w3-margin-bottom">-->
+<!--&lt;!&ndash;            <div class="w3-card">&ndash;&gt;-->
+<!--&lt;!&ndash;                <img src="https://th.bing.com/th/id/OIP.4qQo9ebq5kAlYiGMSoL5RgHaHa?w=189&h=189&c=7&r=0&o=5&dpr=1.25&pid=1.7" alt="Nilesh" style="width:100%">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="w3-container">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <h3>Nilesh Ghavate</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p class="w3-opacity">CN</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--            <div class="container">-->
+<!--                <img src="https://th.bing.com/th/id/OIP.4qQo9ebq5kAlYiGMSoL5RgHaHa?w=189&h=189&c=7&r=0&o=5&dpr=1.25&pid=1.7" alt="Avatar" class="image" style="width:100%">-->
+<!--                <div class="middle">-->
+<!--                    <div class="text">John Doe</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<div class="w3-container w3-row w3-center w3-dark-grey w3-padding-64">
+
+</div>
+
+
+
+<!--<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">-->
+<!--    <h3 class="w3-center">CONTACT</h3>-->
+<!--    <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>-->
+<!--    <div style="margin-top:48px">-->
+<!--        <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Don Bosco Institute Of Technology,Kurla</p>-->
+<!--        <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: 0101010101</p>-->
+<!--        <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: dbit@mail.com</p>-->
+<!--        <br>-->
+<!--        <form action="/action_page.php" target="_blank">-->
+<!--            <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>-->
+<!--            <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>-->
+<!--            <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>-->
+<!--            <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>-->
+<!--            <p>-->
+<!--                <button class="w3-button w3-black" type="submit">-->
+<!--                    <i class="fa fa-paper-plane"></i> SEND MESSAGE-->
+<!--                </button>-->
+<!--            </p>-->
+<!--        </form>-->
+<!--        &lt;!&ndash; Image of location/map &ndash;&gt;-->
+
+<!--    </div>-->
+<!--</div>-->
+{% endblock %}
